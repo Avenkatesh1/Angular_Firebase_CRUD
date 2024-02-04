@@ -63,7 +63,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -103,8 +109,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "angular-firebase-crud:build:production",
+              "serveTarget": "angular-firebase-crud:serve:production"
+            },
+            "development": {
+              "buildTarget": "angular-firebase-crud:build:development",
+              "serveTarget": "angular-firebase-crud:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a02559e0-31bb-4016-85f6-a5d1dc66d5be"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-curd-c7cd1": {
+      "hosting": {
+        "angular-firebase-crud": [
+          "angular-curd-c7cd1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-curd-c7cd1"
+  }
+}
